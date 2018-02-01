@@ -1,0 +1,59 @@
+/* Hackerrank in a string
+
+We say that a string, , contains the word hackerrank if a subsequence of the characters in  spell the word hackerrank. For example, haacckkerrannkk does contain hackerrank, but haacckkerannk does not (the characters all appear in the same order, but it's missing a second r).
+
+More formally, let  be the respective indices of h, a, c, k, e, r, r, a, n, k in string . If  is true, then  contains hackerrank.
+
+You must answer  queries, where each query consists of a string, . For each query, print YES on a new line if contains hackerrank; otherwise, print NO instead.
+
+Input Format
+
+The first line contains an integer denoting  (the number of queries). 
+Each line of the  subsequent lines contains a single string denoting .
+
+Constraints
+
+Output Format
+
+For each query, print YES on a new line if  contains hackerrank; otherwise, print NO instead. */
+
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+char* hackerrankInString(char* s) {
+    // Complete this function
+    //char* String_to_find[10];
+    char String_to_find[10] = "hackerrank";
+    int i = 0;
+    int j = 0;
+    for(j=0;s[j]!='\0';j++){
+        if(s[j] == String_to_find[i]){
+            i++;
+        }
+    }
+    if(i==10){
+        printf("YES\n");
+    }
+    else
+        printf("NO\n");
+    
+    return 0;
+}
+
+int main() {
+    int q; 
+    scanf("%i", &q);
+    for(int a0 = 0; a0 < q; a0++){
+        char* s = (char *)malloc(512000 * sizeof(char));
+        scanf("%s", s);
+        int result_size;
+        char* result = hackerrankInString(s);
+        //printf("%s\n", result);
+    }
+    return 0;
+}
